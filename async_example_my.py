@@ -30,7 +30,7 @@ async def main():
             economia_awesome("https://economia.awesomeapi.com.br/json/last/EUR-UAH", session),
             exchangerate("https://api.exchangerate.host/latest", session),
         ])
-        return sum(results)/len(results)
+        return round(sum(results)/len(results), 7)
 
 start = time.time()
 print(f"Average UAH to EUR exchange rate today {asyncio.run(main())}")
